@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.araqne</groupId>
+	<artifactId>araqne-netflow</artifactId>
+	<packaging>bundle</packaging>
+	<name>Araqne NetFlow</name>
+	<version>0.1.0</version>
+
+	<repositories>
+		<repository>
+			<id>araqne</id>
+			<name>Araqne Maven Repository</name>
+			<layout>default</layout>
+			<url>http://staging.araqne.org/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>araqne</id>
+			<name>Araqne</name>
+			<url>scp://deploy.araqne.org:2222/home/service/araqne/</url>
+		</repository>
+	</distributionManagement>
+
+	<licenses>
+		<license>
+			<name>Apache Software License 2</name>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.6</source>
+					<target>1.6</target>
+					<debug>true</debug>
+					<optimize>true</optimize>
+					<showDeprecations>true</showDeprecations>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>org.araqne.netflow</Bundle-SymbolicName>
+						<Import-Package>*</Import-Package>
+						<Export-Package>
+							org.araqne.netflow.v5;version=${project.version},
+							org.araqne.netflow.v9;version=${project.version}
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>1.0-beta-7</version>
+			</extension>
+		</extensions>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>		
+	</dependencies>
+</project>
