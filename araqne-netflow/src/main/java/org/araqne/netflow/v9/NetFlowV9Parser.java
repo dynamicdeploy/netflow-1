@@ -21,6 +21,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 
+ * {@link http://www.cisco.com/en/US/technologies/tk648/tk362/
+ * technologies_white_paper09186a00800a3db9_ps6601_Products_White_Paper.html}
+ * 
  * @since 0.1.0
  * @author xeraph
  */

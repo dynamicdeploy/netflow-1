@@ -21,6 +21,10 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
+ * {@link http
+ * ://www.cisco.com/en/US/docs/net_mgmt/netflow_collection_engine/3.6/
+ * user/guide/format.html}
+ * 
  * @since 0.1.0
  * @author xeraph
  */
