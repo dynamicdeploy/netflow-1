@@ -59,4 +59,9 @@ public class NetFlowV9Packet {
 	public void setRecords(List<NetFlowV9Record> records) {
 		this.records = records;
 	}
+
+	@Override
+	public String toString() {
+		return header.toString();
+	}
 }

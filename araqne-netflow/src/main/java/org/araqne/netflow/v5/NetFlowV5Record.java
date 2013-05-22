@@ -245,4 +245,14 @@ public class NetFlowV5Record {
 		m.put("dst_mask", dstMask);
 		return m;
 	}
+
+	@Override
+	public String toString() {
+		return "{src_addr=" + srcAddr + ", dst_addr=" + dstAddr + ", next_hop=" + nextHop + ", input=" + inputIface + ", output="
+				+ outputIface + ", pkts=" + packetCount + ", octets=" + octetCount + ", first=" + first + ", last=" + last
+				+ ", src_port=" + srcPort + ", dst_port=" + dstPort + ", tcpflags=" + tcpFlags + ", protocol=" + protocol
+				+ ", tos=" + tos + ", src_as=" + srcAs + ", dst_as=" + dstAs + ", src_mask=" + srcMask + ", dst_mask=" + dstMask
+				+ "}";
+	}
+
 }

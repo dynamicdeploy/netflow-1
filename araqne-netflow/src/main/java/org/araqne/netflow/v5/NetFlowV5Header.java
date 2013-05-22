@@ -148,4 +148,12 @@ public class NetFlowV5Header {
 		m.put("sampling_interval", samplingInterval);
 		return m;
 	}
+
+	@Override
+	public String toString() {
+		return "ver=" + version + ", count=" + count + ", sysuptime=" + sysUptime + ", unixsecs=" + unixSecs + ", unixnsecs="
+				+ unixNsecs + ", seq=" + flowSequence + ", engine_type=" + engineType + ", engine_id=" + engineId
+				+ ", sampling_mode=" + samplingMode + ", sampling_interval=" + samplingInterval;
+	}
+
 }

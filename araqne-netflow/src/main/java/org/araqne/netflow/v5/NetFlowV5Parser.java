@@ -49,7 +49,9 @@ public class NetFlowV5Parser {
 		h.setFlowSequence(bb.getInt() & 0xffffffffl);
 		h.setEngineType(bb.get() & 0xff);
 		h.setEngineId(bb.get() & 0xff);
-		h.setSamplingInterval(bb.getShort() & 0xffff);
+		short s = bb.getShort();
+		h.setSamplingMode((s >> 14) & 3);
+		h.setSamplingInterval(s & 0x3fff);
 		return h;
 	}
 
