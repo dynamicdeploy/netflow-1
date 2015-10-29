@@ -31,6 +31,7 @@ import java.util.Map;
 public class NetFlowV9Parser {
 	public static NetFlowV9Packet parsePacket(byte[] b, NetFlowV9TemplateCache cache) {
 		NetFlowV9Packet p = new NetFlowV9Packet();
+		p.setDataLength(b.length);
 		ByteBuffer bb = ByteBuffer.wrap(b);
 		NetFlowV9Header h = parseHeader(bb);
 
