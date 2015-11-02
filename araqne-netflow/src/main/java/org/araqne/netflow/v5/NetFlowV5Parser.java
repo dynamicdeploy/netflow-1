@@ -39,7 +39,7 @@ public class NetFlowV5Parser {
 			offset += 48;
 		}
 
-		return new NetFlowV5Packet(h, records);
+		return new NetFlowV5Packet(h, records, b.length);
 	}
 
 	public static NetFlowV5Header parseHeader(byte[] b, int offset, int length) {

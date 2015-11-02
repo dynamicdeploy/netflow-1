@@ -27,6 +27,7 @@ public class NetFlowV9Packet {
 	private List<NetFlowV9Template> templates = new ArrayList<NetFlowV9Template>();
 	private NetFlowV9OptionTemplate optionTemplate;
 	private List<NetFlowV9Record> records = new ArrayList<NetFlowV9Record>();
+	private long dataLength;
 
 	public NetFlowV9Header getHeader() {
 		return header;
@@ -58,6 +59,14 @@ public class NetFlowV9Packet {
 
 	public void setRecords(List<NetFlowV9Record> records) {
 		this.records = records;
+	}
+
+	public long getDataLength() {
+		return dataLength;
+	}
+
+	public void setDataLength(long dataLength) {
+		this.dataLength = dataLength;
 	}
 
 	@Override
